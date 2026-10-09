@@ -21,6 +21,54 @@ A full-stack food ordering web application built using Python, Django, SQL, HTML
 - **Frontend:** HTML, CSS, Bootstrap, JavaScript
 - **Authentication:** Django Authentication
 - **Forms:** Django Forms
+- 
+- ## Food Ordering System Workflow
+### User Workflow
+```text
+REGISTER / LOGIN
+       ↓
+USER DASHBOARD
+       ↓
+VIEW RESTAURANTS
+       ↓
+SELECT FOOD → ADD TO CART
+       ↓
+PLACE ORDER
+       ↓
+ORDER CONFIRMATION
+       ↓
+TRACK ORDER STATUS
+```
+
+### Vendor Workflow
+```text
+VENDOR REGISTER / LOGIN
+          ↓
+   ADMIN APPROVAL
+          ↓
+    VENDOR DASHBOARD
+          ↓
+      MANAGE MENU
+          ↓
+     RECEIVE ORDERS
+          ↓
+    ACCEPT / REJECT
+          ↓
+   UPDATE ORDER STATUS
+```
+
+### Admin Workflow
+```text
+ADMIN LOGIN
+     ↓
+ADMIN DASHBOARD
+     ↓
+MANAGE USERS
+     ↓
+APPROVE VENDORS
+     ↓
+MONITOR ORDERS
+```
 
 ## Installation
 
