@@ -23,51 +23,41 @@ A full-stack food ordering web application built using Python, Django, SQL, HTML
 - **Forms:** Django Forms
 - 
 - ## Food Ordering System Workflow
-### User Workflow
-```text
-REGISTER / LOGIN
-       ↓
-USER DASHBOARD
-       ↓
-VIEW RESTAURANTS
-       ↓
-SELECT FOOD → ADD TO CART
-       ↓
-PLACE ORDER
-       ↓
-ORDER CONFIRMATION
-       ↓
-TRACK ORDER STATUS
-```
+- ## Food Ordering System Workflow
 
-### Vendor Workflow
 ```text
-VENDOR REGISTER / LOGIN
-          ↓
-   ADMIN APPROVAL
-          ↓
-    VENDOR DASHBOARD
-          ↓
-      MANAGE MENU
-          ↓
-     RECEIVE ORDERS
-          ↓
-    ACCEPT / REJECT
-          ↓
-   UPDATE ORDER STATUS
-```
-
-### Admin Workflow
-```text
-ADMIN LOGIN
-     ↓
-ADMIN DASHBOARD
-     ↓
-MANAGE USERS
-     ↓
-APPROVE VENDORS
-     ↓
-MONITOR ORDERS
+                 FOOD ORDERING SYSTEM
+                          |
+          +---------------+---------------+
+          |               |               |
+          v               v               v
+        USER            VENDOR           ADMIN
+          |               |               |
+     REGISTER /       REGISTER /        LOGIN
+       LOGIN            LOGIN             |
+          |               |               v
+          v               v         ADMIN DASHBOARD
+    USER DASHBOARD   ADMIN APPROVAL        |
+          |               |          APPROVE VENDORS
+          v               v               |
+  VIEW RESTAURANTS   VENDOR DASHBOARD      v
+          |               |          MANAGE USERS
+          v               v
+      SELECT FOOD      MANAGE MENU
+          |               |
+          v               v
+      ADD TO CART     RECEIVE ORDERS
+          |               |
+          v               v
+      PLACE ORDER    UPDATE ORDER STATUS
+          |               |
+          +-------+-------+
+                  |
+                  v
+           ORDER CONFIRMATION
+                  |
+                  v
+           TRACK ORDER STATUS
 ```
 
 ## Installation
