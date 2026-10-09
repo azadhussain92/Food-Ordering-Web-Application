@@ -1,0 +1,109 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <!-- Order Header -->
+            <div class="text-center">
+             <!-- RESTAURANT HEADER -->
+                <div class="restaurant-header">
+                    <div class="restaurant-name">
+                        <h4> {{ order.items.first.vendor.RestruntName }}</h4>
+                    </div>
+                    <div class="restaurant-info">
+                        {{ order.items.first.vendor.res_address }}
+                        <br>
+                        {{ order.items.first.vendor.landmark }}
+                        <br>
+                        {{ order.items.first.vendor.zipcode }}
+                        <br>
+                        Phone: {{ order.items.first.vendor.res_phone }}
+                    </div>
+                </div>
+                    <h4>Order Slip</h4>
+                <p>Order ID:
+                    <strong>{{ order.orderid }}</strong>
+                </p>
+                
+                <p>Date:
+                    <strong>{{ order.order_date|date:"d/m/Y" }}</strong>
+                </p>
+
+                <p>Time:
+                    <strong>{{ order.order_time|time:"h:i A" }}</strong>
+                </p>
+
+                <!-- <p>
+                    Order Status:
+                    <strong>{{ order.status }}</strong>
+                </p> -->
+            </div>
+            <hr>
+
+            <!-- Order Items -->
+            <h4>Order Items</h4>
+            {% for item in order.items.all %}
+            <div class="d-flex justify-content-between">
+                <div>
+                    <strong>{{ item.name }}</strong>
+                    <br>
+                    <span>₹{{ item.price|floatformat:2 }}×{{ item.quantity }}</span>
+                </div>
+                <div>
+                    <strong>₹{{ item.amount|floatformat:2 }}</strong>
+                </div>
+            </div>
+            <hr>
+            {% endfor %}
+            <!-- Price Details -->
+            <h4>Price Details</h4>
+            <div class="d-flex justify-content-between">
+                <span>Total Food Items</span>
+                <span>₹{{ order.subtotal|floatformat:2 }}</span>
+            </div>
+            <div class="d-flex justify-content-between">
+                <span>Platform Fee</span>
+                <span>₹{{ order.Platform_Fee|floatformat:2 }}</span>
+            </div>
+            <div class="d-flex justify-content-between">
+                <span>CGST (2.5%)</span>
+                <span>₹{{ order.cgst|floatformat:2 }}</span>
+            </div>
+            <div class="d-flex justify-content-between">
+                <span>SGST (2.5%)</span>
+                <span>₹{{ order.sgst|floatformat:2 }}</span>
+            </div>
+            <hr>
+            <!-- Grand Total -->
+            <div class="d-flex justify-content-between">
+                <strong>Grand Total</strong>
+                <strong>₹{{ order.grand_total|floatformat:2 }}</strong>
+            </div>
+            <hr>
+
+        <!-- some gretting -->
+         <div class="text-center">
+            <div class="receipt-footer">
+                <div class="thank-you">
+                    Thank You!
+                </div>
+
+                <div class="visit-again">
+                    Visit Again!!!
+                </div>
+            </div>
+        </div>
+        <br><br>
+            <!-- Buttons -->
+            <div class="text-center">
+                <button type="button" class="print-btn" onclick="window.print()">🖨 Print Slip</button>
+                <a href="{% url 'home' %}">Continue Shopping</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

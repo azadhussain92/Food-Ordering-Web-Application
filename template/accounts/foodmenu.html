@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card p-4">
+
+        <h1>Add Food Menu</h1>
+
+        <form method="POST" enctype="multipart/form-data" class="food-form">
+
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label>Food Name</label>
+                {{ form.name }}
+                {{ form.name.errors }}
+            </div>
+
+            <div class="mb-3">
+                <label>Price</label>
+                {{ form.price }}
+                {{ form.price.errors }}
+            </div>
+
+            <div class="mb-3">
+                <label>Food Image</label>
+                {{ form.image }}
+                {{ form.image.errors }}
+            </div>
+
+            <div class="mb-3">
+                <label>Category</label>
+                {{ form.Categery }}
+                {{ form.Categery.errors }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.is_available }}
+
+                <label>Is Available</label>
+                {{ form.is_available.errors }}
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Food</button>
+
+            <a href="{% url 'dashboard' %}"class="btn btn-secondary">Back to Dashboard</a>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

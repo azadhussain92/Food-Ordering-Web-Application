@@ -1,0 +1,264 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    body{
+        background-color: white;
+    }
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #eae7e7;
+}
+.home-content h1{
+        text-decoration: solid;
+        text-shadow: 3px;
+        /* font-style: oblique; */
+        font-weight: 700;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+.search-box{
+    margin: 30px auto;
+    max-width: 700px;
+    margin-right: auto;
+}
+.search-box input{
+    height: 50px;
+    border-radius: 25px;
+    padding: 10px 25px;
+    border: 1px solid #ccc;
+}
+
+.food-section {
+    margin: 30px;
+}
+
+.food-section h2 {
+    margin-bottom: 20px;
+}
+
+.food-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 20px;
+
+    overflow-x: auto;
+    /* overflow-y: hidden; */
+}
+.food-card {
+    flex: 0 0 180px;
+
+    width: 180px;
+    min-width: 180px;
+
+    background: white;
+    border-radius: 15px;
+    padding: 10px;
+
+    text-align: center;
+    box-shadow: 0px 2px 8px #ccc;
+}
+
+.food-card img {
+    width: 160px;
+    height: 130px;
+
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.restaurant-section {
+        margin: 30px;
+    }
+
+    .restaurant-container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 20px;
+        align-items: start;
+    }
+    .restaurant-card{
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 2px 8px #ccc;
+    }
+    .restaurant-card img{
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+</style>
+<!-- 
+<div class="home-content">
+
+    <h1>Welcome To Home Page</h1>
+
+</div> -->
+
+<!-- SEARCH  -->
+ <nav class="navbar">
+    <div class="home-content">
+    <h1>Welcome To Home Page</h1>
+</div>
+    <div class="search-box">
+        <input type="text" class="from-cntrol" placeholder="search for food or restaurant...">
+    </div>
+ </nav>
+
+ <!-- FOOD BY IMAGE -->
+
+<!-- <div class="food-section"><br>
+    <h2>FOOD BY IMAGES </h2>
+    <div class="food-container">
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Pizza">
+            <h4>Pizza</h4>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="">
+            <h4>Burger</h4>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b" alt="">
+            <h4>Rice</h4>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1559314809-0d155014e29e" alt="">
+            <h4>Noodles</h4>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950" alt="">
+            <h4>Samosa</h4>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554" alt="">
+            <h4>Salad</h4>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8" alt="">
+            <h4>Pasta</h4>
+        </div>
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141" alt="">
+            <h4>Chicken</h4>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb92" alt="">
+            <h4>Fries</h4>
+        </div>
+    </div>
+
+</div> -->
+
+<hr>
+<!-- TOOP RESTAURANTS -->
+<!-- <div class="restaurant-section">
+    <h2>TOOP RESTAURANT</h2>
+    <div class="restaurant-container"> -->
+        <!-- restaurant 1 -->
+         <!-- <div class="restaurant-card">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="">
+            <div class="restaurant-info">
+                <h3>Food Palace</h3>
+                <p>Indian . Chines . Fast Food</p>
+                <span class="rating">
+                     <p>Rating ★ 4.5 </p>
+
+                </span>
+            </div>
+         </div> -->
+
+         <!-- restaurant 2 -->
+          <!-- <div class="restaurant-card">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5" alt="">
+            <div class="restaurant-info">
+                <h3>Spaice Garden</h3>
+                <p>Indian . Biryani . North & Sauth Food</p>
+                <span class="rating">
+                    <p>Rating ★ 4.3</p>
+
+                </span>
+            </div>
+         </div> -->
+
+         <!-- restaurant 3 -->
+          <!-- <div class="restaurant-card">
+            <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f" alt="">
+            <div class="restaurant-info">
+                <h3>Food Corner</h3>
+                <p>Pizza . Burger . Snacks</p>
+                <span class="rating">
+                     <p>Rating ★ 4.2 </p>
+                </span>
+            </div>
+         </div> -->
+
+            <!-- restaurant 4 -->
+         <!-- <div class="restaurant-card">
+            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9" alt="">
+            <div class="restaurant-info">
+                <h3>Royal Restaurant</h3>
+                <p>Biryani . Mandi . Mughlai</p>
+                <span class="rating">
+                     <p>Rating ★ 4.4 </p>
+
+                </span>
+            </div>
+         </div>
+    </div>
+</div> -->
+
+
+
+<!-- REGESTER RESTRAUNTS -->
+<hr>
+<div class="restaurant-section">
+    <h2>REGESTER RESTRAUNTS</h2>
+    <div class="restaurant-container">
+
+        {% for vendor in vendors %}
+
+        <a href="{% url 'Rest' vendor.id %}" style="text-decoration:none; color:inherit;">
+            <div class="restaurant-card">
+
+                {% if vendor.res_image %}
+                    <img src="{{ vendor.res_image.url }}" alt="{{ vendor.RestruntName }}">
+
+                {% else %}
+                     <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="No image">
+
+                {% endif %}
+                <div class="restaurant-info">
+
+                    <h3>{{ vendor.RestruntName }}</h3>
+                    <p>{{ vendor.res_address }}</p>
+                </div>
+
+            </div>
+
+        {% empty %}
+        <p>No registered restaurants yet.</p>
+
+        {% endfor %}
+        </a>
+    </div>
+</div>
+
+
+
+{% endblock %}

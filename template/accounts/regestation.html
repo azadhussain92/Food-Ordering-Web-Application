@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+    <style>
+        body{
+            max-width: 1600px;
+            margin: 0 auto;
+            background-color: white;
+            background-size: cover;
+        }
+        .card{
+            margin: 5px auto;
+            max-width: 1200%;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 25px gray;
+            /* background-color: rgb(219, 68, 126); */
+        }
+        h1{
+            color: black;
+            margin-top: 10px;
+            font-size: 45px;
+            /* font-style: oblique; */
+            font-weight: 500;
+            text-align: center;
+        }
+        
+    </style>
+
+    <br>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <div class="card card-body">
+
+                {% if regester %}
+                <h1>Thankyou For Regestration...!!!</h1>
+                <p>Please Procead To <a href="{% url 'login' %}">Login</a></p>
+
+                {% else %}
+                <h1 style="text-align: center;">Regestation Forms </h1>
+                    <form enctype="multipart/form-data" method="POST">
+
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ froms1.username | as_crispy_field }}
+                            </div>
+                            <div class="col-md-6">
+                                {{ froms1.email | as_crispy_field }}
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ froms2.phone | as_crispy_field }}
+                            </div>
+                            <div class="col-md-6">
+                                {{ froms2.house_no | as_crispy_field }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ froms2.address | as_crispy_field }}
+                            </div>
+                            <div class="col-md-6">
+                                {{ froms2.city | as_crispy_field }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ froms2.state | as_crispy_field }}
+                            </div>
+                            <div class="col-md-6">
+                                {{ froms2.zipcode | as_crispy_field }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ froms2.userpic | as_crispy_field }}
+                            </div>
+                            <div class="col-md-6">
+                                {{ froms1.password | as_crispy_field }}
+                            </div>
+                        </div>
+
+                        {{ froms2.captcha}}
+                        <br>
+                        <input type="submit" class="btn btn-primary" value="regester">
+                    </form>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+{% endblock%}

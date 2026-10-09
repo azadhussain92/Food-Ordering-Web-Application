@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        background-color: white;
+        background-size: cover;
+    }
+    .row{
+        margin: 50px;
+        margin-top: 20px;
+        margin-left: 50px;
+        padding: auto;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+
+    }
+       
+</style>
+
+<br><br>
+<div class="containar">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-6">
+                <h1> {{ user.username }}</h1>
+                <h6>{{ user.email }}</h6>
+                <h6>{{ user.userdetails.phone }}</h6>
+                <h6>{{ user.userdetails.house_no }}</h6>
+                <h6>{{ user.userdetails.address }}</h6>
+                <h6>{{ user.userdetails.city }}</h6>
+                <h6>{{ user.userdetails.state }}</h6>
+                <h6>{{ user.userdetails.zipcode }}</h6>
+                <a class="btn btn-info" href="{% url 'update' %}">Update</a>
+            </div>
+            <div class="col-md-6">
+                <p>user pic </p>
+                {% if details.userpic %}
+                    <img src="{{ details.userpic.url }}" height="400px" width="400px" alt="no image">
+                    {% else %}
+                        <p>no profile pic uploaded</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div><br><br>
+<!-- 
+<div class="containar">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>{{ vendor.user.username }}</h1>
+                <h6>{{ vendor.RestruntName }}</h6>
+                <h6>{{ vendor.lic_no }}</h6>
+                <h6>{{ vendor.Gst_no }}</h6>
+                <h6>{{ vendor.res_email }}</h6>
+                <h6>{{ vendor.res_phone }}</h6>
+                <h6>{{ vendor.res_address }}</h6>
+                <h6>{{ vendor.landmark }}</h6>
+                <h6>{{ vendor.zipcode }}</h6>
+                <a class="btn btn-info" href="update">Update</a>
+            </div>
+
+            <div class="col-md-6">
+                <p>Licence certificate</p>
+                {% if vendor.lic_certificate %}
+                    <img src="{{ vendor.lic_certificate.url }}" height="300px" width="300px" alt="no image">
+                {% else %}
+                    <p>No licence pic uploaded</p>
+                {% endif %}
+            </div>
+
+            <div class="col-md-6">
+                <p>Restaurant image</p>
+                {% if vendor.res_image %}
+                    <img src="{{ vendor.res_image.url }}" height="300px" width="300px" alt="no image">
+                {% else %}
+                    <p>No restaurant image uploaded</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h2 class="mb-4">🛒 My Cart</h2>
+
+    {% if cart_items %}
+        {% for item in cart_items %}
+
+        <div class="card mb-3 p-3">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    
+                    {% if item.image %}
+                        <img src="{{ item.image.url }}"class="img-fluid"style="width:120px; height:90px; object-fit:cover;">
+                    {% endif %}
+                </div>
+
+                <div class="col-md-3">
+                    <h5>{{ item.name }}</h5>
+                    <p class="mb-0">Price: ₹{{ item.price }}</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quantity</h5>
+
+                    <!-- <div class="d-flex align-items-center"> -->
+
+                    <!-- MINUS -->
+                        <a href="{% url 'decrease_quantity' item.id %}"class="btn btn-danger btn-sm"> −</a>
+
+                     <!-- QUANTITY -->
+                    <span class="mx-3 fw-bold">
+                         {{ item.quantity }}
+                     </span>
+
+                    <!-- PLUS -->
+                        <a href="{% url 'increase_quantity' item.id %}"class="btn btn-success btn-sm">+</a>
+                    <!-- </div> -->
+                </div>
+                <div class="col-md-3">
+                    <h6>Total Amount</h6>
+                    <h5>₹{{ item.total_items|floatformat:2 }}</h5>
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+        <div class="card p-4 mt-4">
+
+            <div class="d-flex justify-content-between">
+                <h5>Total Food Price:</h5>
+                <h5>₹{{ total }}</h5>
+            </div>
+
+            <div class="d-flex justify-content-between">            
+                <h5>Platform Fee:</h5>
+                <h5>₹ {{ Platform_Fee }}</h5>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h5>CGST (2.5%):</h5>
+                <h5>₹{{ cgst|floatformat:2 }}</h5>
+                </div>
+
+            <div class="d-flex justify-content-between">
+                <h5>SGST (2.5%):</h5>
+                <h5>₹{{ sgst|floatformat:2 }}</h5>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <h5>Grand Total:</h5>
+                <h5>₹{{ grand_total|floatformat:2 }}</h5>
+            </div>
+            <!-- <div class="text-center"> -->
+                <!-- <button class="btn btn-success mt-3"> Proceed to Payment</button> -->
+            <!-- </div> -->
+             <form method="POST" action="{% url 'order_details' %}">
+
+                {% csrf_token %}
+
+                <button type="submit" class="btn btn-success mt-3">Proceed to Payment</button>
+            </form>
+
+        </div>
+
+    {% else %}
+
+        <div class="text-center mt-5">
+            <h3>Your Cart is Empty 🛒</h3>
+
+            <a href="{% url 'home' %}" class="btn btn-primary mt-3">Continue Shopping</a>
+        </div>
+
+    {% endif %}
+
+</div>
+
+
+
+{% endblock %}

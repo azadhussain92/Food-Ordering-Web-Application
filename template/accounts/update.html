@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+        body{
+            background-color: white;
+            background-size: cover;
+        }
+        .card{
+            margin: 30px;
+            box-shadow: 0px,0px,30px,gray;
+            background-color: rgb(223, 103, 103);
+        }
+    </style>
+    <br>
+    <div class="containar">
+        <div class="jumbotron">
+            <div class="card card-body">
+                <h1 style="text-align: center;">Update details</h1>
+                <form enctype="multipart/form-data" action="{% url 'update' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    {{ froms1.as_p }}
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

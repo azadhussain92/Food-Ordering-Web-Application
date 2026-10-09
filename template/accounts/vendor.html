@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<style>
+
+    body {
+        max-width: 1600px;
+        margin: 0 auto;
+        background-color: white;
+        background-size: cover;
+    }
+
+    .card {
+        margin: 5px auto;
+        max-width: 1200%;
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 25px gray;
+        /* background-color: rgb(219, 68, 126); */
+        
+     } 
+
+    h1 {
+        color: black;
+        margin-top: 10px;
+        font-size: 45px;
+        /* font-style: oblique; */
+        font-weight: 500;
+        text-align: center;
+    }
+</style>
+
+<br>
+
+<div class="container-fluid">
+    <div class="jumbotron">
+        <div class="card card-body">
+
+            {% if vendor_register %}
+
+                <h1>Thankyou for Registration...!</h1>
+
+                <p>Please Proceed To<a href="{% url 'login' %}">Login</a></p>
+
+            {% else %}
+
+                <h1>Vendor Registration Form</h1>
+
+                <form enctype="multipart/form-data" method="POST">
+                    {% csrf_token %}
+
+                    <!-- Username & Email -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- {{ form.username|as_crispy_field }}
+                               -->
+                            {{ form.username|as_crispy_field }}
+                        </div>
+
+                        <div class="col-md-6">
+                            {{ form.email|as_crispy_field }}
+                        </div>
+
+                    </div>
+                    <!-- Restaurant Name & License Number -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form2.RestruntName|as_crispy_field }}
+                        </div>
+
+                        <div class="col-md-6">
+                            {{ form2.lic_no|as_crispy_field }}
+                        </div>
+
+                    </div>
+
+                    <!-- GST & License Certificate -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form2.Gst_no|as_crispy_field }}
+                        </div>
+
+                        <div class="col-md-6">
+                            {{ form2.lic_certificate|as_crispy_field }}
+                        </div>
+
+                    </div>
+
+                    <!-- Restaurant Email & Phone -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form2.res_email|as_crispy_field }}
+                        </div>
+
+                        <div class="col-md-6">
+                            {{ form2.res_phone|as_crispy_field }}
+                        </div>
+
+                    </div>
+
+
+                    <!-- Address & Landmark -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form2.res_address|as_crispy_field }}
+                        </div>
+
+                        <div class="col-md-6">
+                            {{ form2.landmark|as_crispy_field }}
+                        </div>
+
+                    </div>
+
+                    <!-- Zipcode & Restaurant Image -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form2.zipcode|as_crispy_field }}
+                        </div>
+
+                        <div class="col-md-6">
+                            {{ form2.res_image|as_crispy_field }}
+                        </div>
+
+                    </div>
+
+                    <!-- Password -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form.password|as_crispy_field }}
+                        </div>
+
+                    </div>
+                    {{ form2.captcha|as_crispy_field }}
+                    <!-- {{ form.username }} -->
+
+                    <br>
+
+                    <button type="submit" class="btn btn-primary"> Submit</button>
+                </form>
+
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
