@@ -22,10 +22,8 @@ A full-stack food ordering web application built using Python, Django, SQL, HTML
 - **Authentication:** Django Authentication
 - **Forms:** Django Forms
 - 
-- ## Food Ordering System Workflow
-- ## Food Ordering System Workflow
+  ## Food Ordering System Workflow
 
-```text
                  FOOD ORDERING SYSTEM
                           |
           +---------------+---------------+
@@ -58,7 +56,6 @@ A full-stack food ordering web application built using Python, Django, SQL, HTML
                   |
                   v
            TRACK ORDER STATUS
-```
 
 ## Installation
 
