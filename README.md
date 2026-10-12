@@ -1,6 +1,6 @@
-# Full Stack Food Ordering Web Application
+# Full Stack Restaurant Management & Food Ordering System
 
-A full-stack food ordering web application built using Python, Django, SQL, HTML, CSS, Bootstrap, and JavaScript. The application provides food ordering functionality with customer and vendor management features.
+A full-stack Restaurant Management & Food Ordering System built using Python, Django, SQL, HTML, CSS, Bootstrap, and JavaScript. The application provides food ordering functionality with customer and vendor management features.
 
 ## Features
 
