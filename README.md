@@ -1,6 +1,6 @@
-# Full Stack Food Ordering Web Application
+# Full Stack Restaurant Management & Food Ordering System
 
-A full-stack food ordering web application built using Python, Django, SQL, HTML, CSS, Bootstrap, and JavaScript. The application provides food ordering functionality with customer and vendor management features.
+A full-stack Restaurant Management & Food Ordering System built using Python, Django, SQL, HTML, CSS, Bootstrap, and JavaScript. The application provides food ordering functionality with customer and vendor management features.
 
 ## Features
 
@@ -21,7 +21,42 @@ A full-stack food ordering web application built using Python, Django, SQL, HTML
 - **Frontend:** HTML, CSS, Bootstrap, JavaScript
 - **Authentication:** Django Authentication
 - **Forms:** Django Forms
+## Food Ordering System Workflow
 
+```text
+                 FOOD ORDERING SYSTEM
+                          |
+          +---------------+---------------+
+          |               |               |
+          v               v               v
+        USER            VENDOR           ADMIN
+          |               |               |
+     REGISTER /       REGISTER /        LOGIN
+       LOGIN            LOGIN             |
+          |               |               v
+          v               v         ADMIN DASHBOARD
+    USER DASHBOARD   ADMIN APPROVAL        |
+          |               |          APPROVE VENDORS
+          v               v               |
+  VIEW RESTAURANTS   VENDOR DASHBOARD      v
+          |               |          MANAGE USERS
+          v               v
+      SELECT FOOD      MANAGE MENU
+          |               |
+          v               v
+      ADD TO CART     RECEIVE ORDERS
+          |               |
+          v               v
+      PLACE ORDER    UPDATE ORDER STATUS
+          |               |
+          +-------+-------+
+                  |
+                  v
+           ORDER CONFIRMATION
+                  |
+                  v
+           TRACK ORDER STATUS
+```
 ## Installation
 
 1. Clone the repository.
